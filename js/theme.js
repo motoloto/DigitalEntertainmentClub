@@ -129,7 +129,7 @@
         if ( $('.clients_slider').length ){
             $('.clients_slider').owlCarousel({
                 loop:true,
-                margin: 30,
+                margin: 10,
                 items: 5,
                 nav: false,
                 autoplay: false,
@@ -164,9 +164,9 @@
     function slider(){
         if ( $('.slider').length ){
             $('.slider').owlCarousel({
-                loop:true,
+                loop:false,
                 margin: 30,
-                items: 3,
+                items: 2,
                 nav: false,
                 autoplay: true,
                 smartSpeed: 2500,

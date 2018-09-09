@@ -1,0 +1,1 @@
+$(document).ready(function(){$(function(){$("#nav").load("nav.html")});});var scrollp=0;(function($){$(document).ready(function(){$(function(){$(window).scroll(function(){if($(this).scrollTop()<scrollp||0==window.pageYOffset){$('.navbar').fadeIn();scrollp=$(this).scrollTop();}else{$('.navbar').fadeOut();scrollp=$(this).scrollTop();}});});});}(jQuery));

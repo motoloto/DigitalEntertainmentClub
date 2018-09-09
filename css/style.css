@@ -157,6 +157,7 @@ button:focus {
   padding: 0px;
   border: 0px;
   border-radius: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .header_area .navbar .nav .nav-item {
@@ -458,7 +459,7 @@ button:focus {
 }
 
 .advanced_search {
-  background: #fff;
+  background: rgba(255, 255,255,0.7);
   max-width: 360px;
   border-radius: 10px;
   overflow: hidden;
@@ -531,12 +532,22 @@ button:focus {
   font-weight: 300;
 }
 
+
+
 .advanced_search .search_range {
   display: block;
   position: relative;
   clear: both;
   text-align: left;
   padding-top: 16px;
+}
+
+.advanced_search .signIn-select {
+  display: block;
+  position: relative;
+  clear: both;
+  text-align: left;
+  margin: 16px;
 }
 
 .advanced_search .search_range .range_item h5 {
@@ -3873,10 +3884,10 @@ h6 {
 /* Testimonials Area css
 ============================================================================================ */
 .testimonials_area {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba(0, 0, 0, 0.75)), to(rgba(0, 0, 0, 0.75))), url("../img/testimonials/testi-bg.jpg") no-repeat scroll center center;
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%), url("../img/testimonials/testi-bg.jpg") no-repeat scroll center center;
-  background: -o-linear-gradient(rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%), url("../img/testimonials/testi-bg.jpg") no-repeat scroll center center;
-  background: linear-gradient(rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%), url("../img/testimonials/testi-bg.jpg") no-repeat scroll center center;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba(0, 0, 0, 0.75)), to(rgba(0, 0, 0, 0.75))), url("../img/testimonials/member-bg.jpg") no-repeat scroll center center;
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%), url("../img/testimonials/member-bg.jpg") no-repeat scroll center center;
+  background: -o-linear-gradient(rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%), url("../img/testimonials/member-bg.jpg") no-repeat scroll center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 100%), url("../img/testimonials/member-bg.jpg") no-repeat scroll center center;
   background-size: cover;
 }
 
@@ -3934,9 +3945,10 @@ h6 {
 }
 
 .testi_item img {
-  width: auto !important;
+  width: 100%;
   margin: auto;
   margin-bottom: 25px;
+  overflow: hidden;
 }
 
 .testi_item p {
@@ -4225,7 +4237,10 @@ h6 {
 
 }
 
-
+.container .event_img_group .img_box img {
+    width : 100%;
+    margin: 5px;
+}
 /*---------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */

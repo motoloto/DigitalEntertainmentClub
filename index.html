@@ -22,49 +22,8 @@
 <body>
 
 <!--================Header Menu Area =================-->
-<header class="header_area">
-    <div class="main_menu">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container box_1620">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div  >
-                    <a class="navbar-brand logo_h" href="index.html"><img id="logo" src="img/logo.png" alt=""></a>
-                </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav menu_nav ml-auto">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="properties.html">社團消息</a></li>
-                        <li class="nav-item"><a class="nav-link" href="agents.html">活動剪輯</a></li>
-                        <!--<li class="nav-item submenu dropdown">-->
-                        <!--<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"-->
-                        <!--aria-haspopup="true" aria-expanded="false">Pages</a>-->
-                        <!--<ul class="dropdown-menu">-->
-                        <!--<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>-->
-                        <!--</ul>-->
-                        <!--</li>-->
-                        <!--<li class="nav-item submenu dropdown">-->
-                        <!--<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"-->
-                        <!--aria-haspopup="true" aria-expanded="false">Blog</a>-->
-                        <!--<ul class="dropdown-menu">-->
-                        <!--<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>-->
-                        <!--<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>-->
-                        <!--</ul>-->
-                        <!--</li>-->
-                        <li class="nav-item"><a class="nav-link" href="mailto:david.tung@jpmorgan.com">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-</header>
+<!-- Navigation -->
+<div id="nav"></div>
 <!--================Header Menu Area =================-->
 
 <!--================Home Banner Area =================-->
@@ -80,46 +39,48 @@
     </div>
     <!--<div class="container">-->
     <!--<div class="advanced_search">-->
-    <!--<h3>Search Properties for</h3>-->
-    <!--<div class="search_select">-->
-    <!--<select class="s_select">-->
+    <!--<h3>加入我們</h3>-->
+    <!--<div class="">-->
+    <!--<select class="input-group">-->
     <!--<option value="1">Choose Locations</option>-->
-    <!--<option value="2">Property Type</option>-->
-    <!--<option value="4">Bedrooms</option>-->
-    <!--</select>-->
-    <!--<select class="s_select">-->
-    <!--<option value="1">Property Type</option>-->
-    <!--<option value="2">Choose Locations</option>-->
-    <!--<option value="4">Bedrooms</option>-->
-    <!--</select>-->
-    <!--<select class="s_select">-->
-    <!--<option value="1">Bedrooms</option>-->
-    <!--<option value="2">Property Type</option>-->
-    <!--<option value="4">Choose Locations</option>-->
-    <!--</select>-->
-    <!--<select class="s_select">-->
-    <!--<option value="1">Bathrooms</option>-->
-    <!--<option value="2">Property Type</option>-->
-    <!--<option value="4">Bedrooms</option>-->
+    <!--<option value="2">Panchiao</option>-->
+    <!--<option value="4">Walsin</option>-->
     <!--</select>-->
     <!--</div>-->
-    <!--<div class="search_range">-->
-    <!--<div class="range_item">-->
-    <!--<h5>Price Range</h5>-->
-    <!--<div id="slider-range"></div>-->
-    <!--<span class="d_text">$200</span>-->
-    <!--<input type="text" id="amount" readonly style="border:0;" class="amount">-->
-    <!--</div>-->
-    <!--<div class="range_item">-->
-    <!--<h5>property Area</h5>-->
-    <!--<div id="slider-range2"></div>-->
-    <!--<span class="d_text2">50sqm</span>-->
-    <!--<input type="text" id="amount2" readonly style="border:0;" class="amount2">-->
-    <!--</div>-->
-    <!--</div>-->
+    <!--<div class="s_input"><input type="text"  placeholder="SID"></div>-->
+
+    <!--&lt;!&ndash;<input type="text" class="input-group-text form-control" placeholder="Name">&ndash;&gt;-->
+    <!--&lt;!&ndash;<input type="text" class="input-group-text form-control" placeholder="Mail Address">&ndash;&gt;-->
     <!--<button type="submit" value="submit" class="btn submit_btn">Search Property</button>-->
     <!--</div>-->
     <!--</div>-->
+    <div class="container">
+        <div class="advanced_search">
+            <h3>加入我們</h3>
+            <form method="post" action="mailto:someone@example.com?subject=[數位休閒社] 社員登錄 !"  enctype="text/plain">
+                <div>
+                    <div class="form-group">
+                        <select class="signIn-select" id="signInLocation">
+                            <option value="">Choose your office</option>
+                            <option value="Walsin">Walsin</option>
+                            <option value="Panchiao">Panchiao</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="SID" class="form-control" id="signInSID" aria-describedby="emailHelp"
+                               placeholder="SID">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" id="signInName" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" id="signInEmail" placeholder="Email">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
 </section>
 <!--================End Home Banner Area =================-->
 
@@ -166,7 +127,8 @@
     <div class="container">
         <div class="main_title">
             <h2>社團活動</h2>
-            <h3>我們著重在家用主機平台上，每次的活動我們會精心挑選一至二款遊戲作為社團活動主題。另外不定時舉辦特別體驗活動。社團活動固定於每周三晚上 18: 30 至 19:30。地點位於板橋辦公室交誼廳。隨時歡迎你！</h3>
+            <h3>我們著重在家用主機平台上，每次的活動我們會精心挑選一至二款遊戲作為社團活動主題。另外不定時舉辦特別體驗活動。社團活動固定於每周三晚上 18: 30 至
+                19:30。地點位於板橋辦公室交誼廳。隨時歡迎你！</h3>
         </div>
         <div class="row cities_inner">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
@@ -198,7 +160,7 @@
         </div>
         <div class="row properties_inner event_slider owl-carousel">
             <div class="properties_item">
-                <div class="pp_img">
+                <div class="pp_img ">
                     <img class="img-fluid" src="img/events/20180829/20180829_190048.jpg" alt="">
                 </div>
                 <div class="pp_content">
@@ -253,7 +215,7 @@
                 <div class=" event_slider  owl-carousel">
                     <div class="item">
                         <div class="testi_item">
-                            <img src="img/testimonials/testi-1.png" alt="">
+                            <img src="img/team/team-1.jpg" alt="">
                             <p>社長</p>
                             <h4>David Tung</h4>
                             <h6>IT Application Development</h6>
@@ -261,8 +223,8 @@
                     </div>
                     <div class="item">
                         <div class="testi_item">
-                            <img src="img/testimonials/testi-2.png" alt="">
-                            <p>副社長</p>
+                            <img src="img/team/team-2.jpg" alt="">
+                            <p>副社長</p>-->
                             <h4>Raymond Chung</h4>
                             <h6>IT Application Development</h6>
                         </div>
@@ -386,5 +348,6 @@
 <script src="js/jquery.ajaxchimp.min.js"></script>
 <script src="js/mail-script.js"></script>
 <script src="js/theme.js"></script>
+<script src="js/includeNav.js"></script>
 </body>
 </html>
