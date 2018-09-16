@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/logo-icon.png" type="image/png">
+    <title>數位休閒社</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="vendors/linericon/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+    <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="vendors/animate-css/animate.css">
+    <link rel="stylesheet" href="vendors/jquery-ui/jquery-ui.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="stylesheet" href="fancybox/jquery.fancybox.min.css" type="text/css"/>
+
+</head>
+<body>
+
+
+<!--================Header Menu Area =================-->
+<!--================Header Menu Area =================-->
+<!-- Navigation -->
+<div id="nav"></div>
+<!--================Header Menu Area =================-->
+
+<!--================Home Banner Area =================-->
+<section class="banner_area">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0"
+             data-background=""></div>
+        <div class="container">
+            <div class="banner_content">
+                <div class="page_link">
+                    <a href="index.html">Home</a>
+                </div>
+                <h2>社團介紹</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Home Banner Area =================-->
+
+<!--================Welcome Area =================-->
+<section class="p_120">
+    <div class="container">
+        <div class="row event_img_group">
+            <div class="col-lg-5 img_box">
+                <a rel="example_group" data-fancybox="gallery" href="./img/events/20180815/20180801_191329.jpg"
+                   title="">
+                    <img class="event_img float-left lazyload" alt=""
+                         src="./img/intro/intro-3.jpg"/></a>
+            </div>
+            <div class="col-lg-5 ext_box">
+                <p>數位休閒社的宗旨是提供同仁們在忙碌的工作之餘，藉由電子器材進行休閒活動，以助於紓解壓力。活動內容皆以多人同樂的模式進行，同仁之間也可增進感情、培養默契。</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="p_120">
+    <div class="container">
+        <div class="row event_img_group">
+            <div class="col-lg-5 img_box">
+                <a rel="example_group" data-fancybox="gallery" href="./img/events/20180815/20180801_191329.jpg"
+                   title="">
+                    <img class="event_img float-left lazyload" alt=""
+                         src="./img/intro/intro-4.jpg"/></a>
+            </div>
+            <div class="col-lg-5 text_box">
+                <p>社團固定於每周三晚上6點30分，在板橋辦公室交誼廳進行社團活動。另外每月會視情況舉辦競賽。</p>
+                <p>每周的社團活動將由社團幹部準備一至二款遊戲供使用。及器材，社員不須另外自備</p>
+                <p>遊戲軟體及設備將由社團提供，社員不須另外自備，如果社員有遊戲想與大家分享，社團也十分歡迎！</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="p_120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 form-group">
+                <h3>立即加入</h3>
+                <p>請確認您以了解上述社團進行方式，如有相關問題，隨時歡迎向社團提出。</p>
+                <div id="policyCheckBox" class="">
+                    <input type="checkbox" class="form-check-input " id="policyCheck"/>
+                    <h4 class="form-check-label with-errors ">我已經了解社團經營方式</h4>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <h3>會員資料</h3>
+                <form method="post" id="apply-form" action="mailto:someone@example.com?subject=[數位休閒社] 社員登錄申請 !"
+                      enctype="text/plain" onsubmit="return apply();" >
+                    <div>
+                        <div class="form-group" id="form-group-SID">
+                            <input type="text" name="SID" class="form-control" id="signInSID"
+                                   aria-describedby="emailHelp"
+                                   placeholder="SID" required >
+                        </div>
+                        <div class="form-group" id="form-group-signInName">
+                            <input type="text" name="name" class="form-control" id="signInName" placeholder="Name"
+                                   >
+                        </div>
+                        <div class="form-group" id="form-group-signInEmail">
+                            <input type="email" name="email" class="form-control" id="signInEmail" placeholder="Email"
+                                   >
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary" >申請</button>
+                        </div>
+                    </div>
+                </form>
+                <script>
+                    function apply(){
+                        var applyForm = document.getElementById("apply-form")
+                        var checkBox = document.getElementById("policyCheck");
+                        var policyCheckBox = document.getElementById("policyCheckBox");
+
+                        if(checkBox.checked == false){
+                            alert("請確認已了解社團營運方式喔!");
+                            policyCheckBox.classList.add("alert","alert-danger");
+                            return false;
+                        }else{
+                           applyForm.submit();
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Welcome Area =================-->
+
+
+<!--================ start footer Area  =================-->
+
+<div id="footer"></div>
+<!--================ End footer Area  =================-->
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/stellar.js"></script>
+<script src="vendors/lightbox/simpleLightbox.min.js"></script>
+<script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+<script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+<script src="vendors/isotope/isotope-min.js"></script>
+<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="vendors/jquery-ui/jquery-ui.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/mail-script.js"></script>
+<script src="js/theme.js"></script>
+<script src="fancybox/jquery.fancybox.min.js"></script>
+<script src="js/includeNav.js"></script>
+<script src="js/includeFooter.js"></script>
+</body>
+</html>

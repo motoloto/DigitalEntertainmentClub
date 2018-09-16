@@ -18,6 +18,8 @@
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="stylesheet" href="fancybox/jquery.fancybox.min.css" type="text/css"/>
 </head>
 <body>
 
@@ -33,52 +35,28 @@
             <div class="banner_content">
                 <h5>Joy of Playing</h5>
                 <h3>一同探索遊戲的樂趣</h3>
-                <a class="main_btn" href="#">Learn More</a>
+                <a class="main_btn" href="introduction.html">Join us !</a>
             </div>
         </div>
     </div>
-    <!--<div class="container">-->
-    <!--<div class="advanced_search">-->
-    <!--<h3>加入我們</h3>-->
-    <!--<div class="">-->
-    <!--<select class="input-group">-->
-    <!--<option value="1">Choose Locations</option>-->
-    <!--<option value="2">Panchiao</option>-->
-    <!--<option value="4">Walsin</option>-->
-    <!--</select>-->
-    <!--</div>-->
-    <!--<div class="s_input"><input type="text"  placeholder="SID"></div>-->
-
-    <!--&lt;!&ndash;<input type="text" class="input-group-text form-control" placeholder="Name">&ndash;&gt;-->
-    <!--&lt;!&ndash;<input type="text" class="input-group-text form-control" placeholder="Mail Address">&ndash;&gt;-->
-    <!--<button type="submit" value="submit" class="btn submit_btn">Search Property</button>-->
-    <!--</div>-->
-    <!--</div>-->
     <div class="container">
         <div class="advanced_search">
-            <h3>加入我們</h3>
-            <form method="post" action="mailto:someone@example.com?subject=[數位休閒社] 社員登錄 !"  enctype="text/plain">
-                <div>
-                    <div class="form-group">
-                        <select class="signIn-select" id="signInLocation">
-                            <option value="">Choose your office</option>
-                            <option value="Walsin">Walsin</option>
-                            <option value="Panchiao">Panchiao</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="SID" class="form-control" id="signInSID" aria-describedby="emailHelp"
-                               placeholder="SID">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="name" class="form-control" id="signInName" placeholder="Name">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" class="form-control" id="signInEmail" placeholder="Email">
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            <h3>活動快訊</h3>
+            <ul class="list-group news-list">
+                <a rel="example_group" data-fancybox="gallery" href="./img/events/poster/2018-09-26-3.PNG"
+                   title="">
+                    <li class="list-group-item news-list-item">2018-09-26 數位食神大賽</li></a>
+                <a rel="example_group" data-fancybox="gallery" href="./img/events/poster/2018-09-26-2.PNG"
+                   title=""><li class="list-group-item news-list-item">2018-09-26 VR體驗活動</li></a>
+                    <a rel="example_group" data-fancybox="gallery" href="./img/events/poster/2018-09-26-1.PNG"
+                       title=""><li class="list-group-item news-list-item">2018-09-26 員工感謝周特別活動</li></a>
+                <li class="list-group-item news-list-item">2018-09-19 不知道玩什麼</li>
+                <li class="list-group-item news-list-item">2018-09-12 太鼓達人之夜</li>
+                <li class="list-group-item news-list-item">2018-09-05 煮過頭2</li>
+                <li class="list-group-item news-list-item">2018-09-05 煮過頭2</li>
+                <li class="list-group-item news-list-item">2018-09-05 煮過頭2</li>
+                <li class="list-group-item news-list-item">2018-09-05 煮過頭2</li>
+            </ul>
         </div>
     </div>
 </section>
@@ -167,7 +145,7 @@
                     <h4>馬力歐賽車錦標賽</h4>
                     <div class="pp_footer">
                         <h5>2018.08.29</h5>
-                        <a class="main_btn genric-btn info" href="#">More</a>
+                        <a class="main_btn genric-btn info" href="events.html">More</a>
                     </div>
                 </div>
             </div>
@@ -180,7 +158,7 @@
                     <h4>民俗月VR體驗活動</h4>
                     <div class="pp_footer">
                         <h5>2018.08.22</h5>
-                        <a class="main_btn genric-btn info" href="#">More</a>
+                        <a class="main_btn genric-btn info" href="events.html">More</a>
                     </div>
                 </div>
             </div>
@@ -192,7 +170,7 @@
                     <h4>煮過頭2</h4>
                     <div class="pp_footer">
                         <h5>2018.08.15</h5>
-                        <a class="main_btn genric-btn info" href="#">More</a>
+                        <a class="main_btn genric-btn info" href="events.html">More</a>
                     </div>
                 </div>
             </div>
@@ -321,6 +299,8 @@
 <script src="js/theme.js"></script>
 <script src="js/includeNav.js"></script>
 <script src="js/includeFooter.js"></script>
+<script src="fancybox/jquery.fancybox.min.js"></script>
+
 
 </body>
 </html>
