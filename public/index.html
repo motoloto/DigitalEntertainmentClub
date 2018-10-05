@@ -43,7 +43,7 @@
         <div class="advanced_search">
             <h3>活動快訊</h3>
             <div class="news-list">
-                <ul class="list-group">
+                <ul class="list-group" id="news">
                     <a rel="example_group" data-fancybox="gallery" href="./img/events/poster/2018-09-26-3.PNG"
                        title="">
                         <li class="list-group-item news-list-item">2018-09-26 數位食神大賽</li>
@@ -311,19 +311,27 @@
 <script>
     $.get('http://localhost:8080/public/img/events/poster', (data) =>
     {
-        console.log(data);
-        let listing = parseDirectoryListing(data);
-        $('body').append(JSON.stringify(listing));
+        let imgs = parseDirectoryListing(data);
+        div = document.getElementById('news');
+        div.insertAdjacentHTML( 'beforeend', imgs );
     });
 
     function parseDirectoryListing(text)
     {
-        let docs = text
-                     .match(/href="([\w]+)/g) // pull out the hrefs
-                     .map((x) => x.replace('href="', '')); // clean up
-        console.log(docs);
-        return docs;
+       var imgs = [];
+       var myRegexp = /<li[^>]*>[^<]*<a[^>]*href="([^"]+)\.(gif|jpg|JPG|png|PNG)"/g;
+        match = myRegexp.exec(text);
+        while (match != null) {
+          // matched text: match[0]
+          // match start: match.index
+          // capturing group n: match[n]
+          console.log(match[1])
+          imgs.push(match[1])
+          match = myRegexp.exec(text);
+        }
     }
-  </script>
+
+
+</script>
 </body>
 </html>

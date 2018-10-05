@@ -6,7 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var serveIndex = require('serve-index')
+var serveIndex = require('serve-index'); // directory
+var fs = require("fs");
 
 
 var app = express();
@@ -21,10 +22,23 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
-app.use('/public/img/', express.static('public/img'), serveIndex('public/img', {'icons': false}))
+app.use('/public/img/',  serveIndex('public/img'));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+app.get('/testImg', function(req, res) {
+    var testFolder = 'public/img/';
+    var fileList = '';
+    fs.readdir(testFolder, (err, files) => {
+        files.forEach(file => {
+          console.log(file);
+          fileList =  fileList + ';'+file;
+          console.log(">>"+fileList) ;
+        });
+        res.send(200,fileList);
+      });
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -41,6 +55,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
