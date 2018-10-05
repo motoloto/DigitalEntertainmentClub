@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/logo-icon.png" type="image/png">
+    <title>數位休閒社</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="vendors/linericon/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+    <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="vendors/animate-css/animate.css">
+    <link rel="stylesheet" href="vendors/jquery-ui/jquery-ui.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="stylesheet" href="fancybox/jquery.fancybox.min.css" type="text/css"/>
+
+</head>
+<body>
+
+
+<!--================Header Menu Area =================-->
+<!--================Header Menu Area =================-->
+<!-- Navigation -->
+<div id="nav"></div>
+<!--================Header Menu Area =================-->
+
+<!--================Home Banner Area =================-->
+<section class="banner_area">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0"
+             data-background=""></div>
+        <div class="container">
+            <div class="banner_content">
+                <div class="page_link">
+                    <a href="index.html">Home</a>
+                </div>
+                <h2>活動剪輯</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Home Banner Area =================-->
+
+<!--================Welcome Area =================-->
+<section class="p_120">
+    <div class="container">
+        <div id="event_list">
+            <!-- event sample
+            <h3>2018/08/15</h3>
+            <div class="row event_img_group">
+                <div class="col-lg-3 img_box">
+                    <a rel="example_group" data-fancybox="gallery" href="./img/events/20180815/20180801_191329.jpg"
+                       title="">
+                        <img class="event_img float-left lazyload" alt=""
+                             src="./img/events/20180815/20180801_191329.jpg"/></a>
+                </div>
+            </div>
+            -->
+        </div>
+    </div>
+</section>
+<!--================End Welcome Area =================-->
+
+
+<!--================ start footer Area  =================-->
+
+<div id="footer"></div>
+<!--================ End footer Area  =================-->
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/stellar.js"></script>
+<script src="vendors/lightbox/simpleLightbox.min.js"></script>
+<script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+<script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+<script src="vendors/isotope/isotope-min.js"></script>
+<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="vendors/jquery-ui/jquery-ui.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/mail-script.js"></script>
+<script src="js/theme.js"></script>
+<script src="fancybox/jquery.fancybox.min.js"></script>
+<script src="js/includeNav.js"></script>
+<script src="js/includeFooter.js"></script>
+<script>
+
+    function parseImageDirectory(text){
+       var maxRead = 6;
+       var myRegexp = /<li[^>]*>[^<]*<a[^>]*href="\/img\/events\/album\/([^"]+([^"]+))"\s/g;
+        match = myRegexp.exec(text);
+        var count= 0;
+        while (match != null) {
+          console.log(match[1]);
+          var folder_name = match[1];
+          var event_group_list = document.getElementById("event_list");
+          var event_group = '<h3>'+folder_name+'</h3>';
+          event_group = event_group + '<div class=\"row event_img_group\" id=\"' +folder_name+ '\"></div>';
+          console.log(event_group);
+          event_group_list.insertAdjacentHTML('afterbegin',event_group);
+
+          // Find images from target folder
+           $.ajax({
+                url: 'http://localhost:8080/img/events/album/'+folder_name,
+                indexValue: folder_name,
+                success:
+                    function(data){
+                        var images = parseImageListing(data);
+                        console.log(images);
+                        var event_group = document.getElementById(this.indexValue);
+                        event_group.insertAdjacentHTML('afterbegin',images);
+                    }
+                });
+          match = myRegexp.exec(text);
+          count++;
+          if (count >= maxRead) {break;}
+        }
+    }
+
+    function parseImageListing(text){
+       var imgs = "";
+       var maxRead = 6;
+       var fileNameRegexp = /<li[^>]*>[^<]*<a[^>]*href="([^"]+\/([^"]+\.(gif|jpg|JPG|png|PNG)))"\s+class=""\s+title="(([^"]+)\.(gif|jpg|JPG|png|PNG))"/g;
+        match = fileNameRegexp.exec(text);
+        var count= 0;
+        while (match != null) {
+          var image_link = match[1];
+          imgs = imgs + '<div class=\"col-lg-3 img_box\"><a rel=\"example_group\" data-fancybox=\"gallery\" href=\".' +match[1]+ '\" title=\"\"> <img class=\"event_img float-left lazyload\" src=\".' +match[1]+ '\"\/></a></div>';
+          match = fileNameRegexp.exec(text);
+          count++;
+          if (count >= maxRead) {break;}
+        }
+        return imgs;
+    }
+
+    $.get('http://localhost:8080/img/events/album', (data) =>
+    {
+        parseImageDirectory(data);
+    });
+
+</script>
+</body>
+</html>

@@ -43,25 +43,12 @@
         <div class="advanced_search">
             <h3>活動快訊</h3>
             <div class="news-list">
-                <ul class="list-group">
-                    <a rel="example_group" data-fancybox="gallery" href="./img/events/poster/2018-09-26-3.PNG"
-                       title="">
-                        <li class="list-group-item news-list-item">2018-09-26 數位食神大賽</li>
-                    </a>
-                    <a rel="example_group" data-fancybox="gallery" href="./img/events/poster/2018-09-26-2.PNG"
-                       title="">
-                        <li class="list-group-item news-list-item">2018-09-26 VR體驗活動</li>
-                    </a>
-                    <a rel="example_group" data-fancybox="gallery" href="./img/events/poster/2018-09-26-1.PNG"
-                       title="">
-                        <li class="list-group-item news-list-item">2018-09-26 員工感謝周特別活動</li>
-                    </a>
-                    <li class="list-group-item news-list-item">2018-09-19 不知道玩什麼</li>
-                    <li class="list-group-item news-list-item">2018-09-12 太鼓達人之夜</li>
-                    <li class="list-group-item news-list-item">2018-09-05 煮過頭2</li>
-                    <li class="list-group-item news-list-item">2018-09-05 煮過頭2</li>
-                    <li class="list-group-item news-list-item">2018-09-05 煮過頭2</li>
-                    <li class="list-group-item news-list-item">2018-09-05 煮過頭2</li>
+                <ul class="list-group" id="news">
+                    <!-- News sample -->
+                    <!--<a rel="example_group" data-fancybox="gallery" href="./img/events/poster/2018-09-26-3.PNG"-->
+                       <!--title="">-->
+                        <!--<li class="list-group-item news-list-item">2018-09-26 數位食神大賽</li>-->
+                    <!--</a>-->
                 </ul>
             </div>
         </div>
@@ -308,6 +295,38 @@
 <script src="js/includeFooter.js"></script>
 <script src="fancybox/jquery.fancybox.min.js"></script>
 
+<script>
 
+    function parseDirectoryListing(text){
+       var imgs = "";
+       var maxRead = 6;
+       var myRegexp = /<li[^>]*>[^<]*<a[^>]*href="([^"]+\/([^"]+\.(gif|jpg|JPG|png|PNG)))"\s+class=""\s+title="(([^"]+)\.(gif|jpg|JPG|png|PNG))"/g;
+        match = myRegexp.exec(text);
+        var count= 0;
+        while (match != null) {
+          console.log('match[0]'+match[0]);
+          console.log('1>>'+match[1]);
+          console.log('2>>'+match[2]);
+          console.log('3>>'+match[3]);
+          console.log('4>>'+match[4]);
+          console.log('5>>'+match[5]);
+
+          <!--imgs.push(match[1]);-->
+          imgs = imgs + '<a rel=\"example_group\" data-fancybox=\"gallery\" href=\".'+match[1]+'\" title=\"\"><li class=\"list-group-item news-list-item\">'+match[5]+'</li></a>';
+          match = myRegexp.exec(text);
+          count++;
+          if (count >= maxRead) {break;}
+        }
+        return imgs;
+    }
+    $.get('http://localhost:8080/img/events/poster', (data) =>
+    {
+        var imgs = parseDirectoryListing(data);
+        console.log(imgs);
+        var div = document.getElementById("news");
+        div.insertAdjacentHTML('beforeend',imgs);
+    });
+
+</script>
 </body>
 </html>
