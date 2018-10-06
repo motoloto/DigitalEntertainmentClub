@@ -4237,11 +4237,32 @@ h6 {
   height: 70px ;
 
 }
-
 .container .event_img_group .img_box img {
     width : 100%;
     margin: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform:
+        scale(1,1);
+        transition: all 0.2s ease-out;
 }
+
+.container .event_img_group .img_box {
+    margin: 0px;
+}
+
+
+.container .event_img_group .img_box img:hover {
+    transform:
+        scale(1.2,1.2);
+
+}
+
+.container .event_img_group{
+    width : 100%;
+    margin: 50px;
+    border-top-style: solid;
+}
+
 
 .advanced_search .news-list {
     background: rgba(0,0,0,0);

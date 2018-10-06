@@ -94,6 +94,7 @@
 <script src="js/includeNav.js"></script>
 <script src="js/includeFooter.js"></script>
 <script>
+    var ip = location.host;
 
     function parseImageDirectory(text){
        var maxRead = 6;
@@ -105,13 +106,13 @@
           var folder_name = match[1];
           var event_group_list = document.getElementById("event_list");
           var event_group = '<h3>'+folder_name+'</h3>';
-          event_group = event_group + '<div class=\"row event_img_group\" id=\"' +folder_name+ '\"></div>';
+          event_group = event_group + '<div class=\"row event_img_group justify-content-start\" id=\"' +folder_name+ '\"></div>';
           console.log(event_group);
           event_group_list.insertAdjacentHTML('afterbegin',event_group);
 
           // Find images from target folder
            $.ajax({
-                url: 'http://localhost:8080/img/events/album/'+folder_name,
+                url:  'http://' + ip + '/img/events/album/'+folder_name,
                 indexValue: folder_name,
                 success:
                     function(data){
@@ -135,16 +136,19 @@
         var count= 0;
         while (match != null) {
           var image_link = match[1];
-          imgs = imgs + '<div class=\"col-lg-3 img_box\"><a rel=\"example_group\" data-fancybox=\"gallery\" href=\".' +match[1]+ '\" title=\"\"> <img class=\"event_img float-left lazyload\" src=\".' +match[1]+ '\"\/></a></div>';
+          console.log(image_link);
+          imgs = imgs + '<div class=\"col-lg-3 img_box \"><a rel=\"example_group\" data-fancybox=\"gallery\" href=\".' +match[1]+ '\" title=\"\"> <img class=\"event_img float-left lazyload\" src=\".' +match[1]+ '\"\/></a></div>';
           match = fileNameRegexp.exec(text);
           count++;
           if (count >= maxRead) {break;}
         }
         return imgs;
     }
-
-    $.get('http://localhost:8080/img/events/album', (data) =>
+    var url = 'http://'+ ip + '/img/events/album';
+    console.log(url);
+    $.get(url, (data) =>
     {
+        console.log(data);
         parseImageDirectory(data);
     });
 

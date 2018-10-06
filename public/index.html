@@ -123,54 +123,54 @@
 </section>
 <!--================End Cities Area =================-->
 
-<!--================Properties Area =================-->
-<section class="properties_area">
-    <div class="container">
-        <div class="main_title">
-            <h2>活動剪輯</h2>
-            <h3></h3>
-        </div>
-        <div class="row properties_inner event_slider owl-carousel">
-            <div class="properties_item">
-                <div class="pp_img ">
-                    <img class="img-fluid" src="img/events/20180829/20180829_190048.jpg" alt="">
-                </div>
-                <div class="pp_content">
-                    <h4>馬力歐賽車錦標賽</h4>
-                    <div class="pp_footer">
-                        <h5>2018.08.29</h5>
-                        <a class="main_btn genric-btn info" href="events.html">More</a>
-                    </div>
-                </div>
-            </div>
+<!--&lt;!&ndash;================Properties Area =================&ndash;&gt;-->
+<!--<section class="properties_area">-->
+    <!--<div class="container">-->
+        <!--<div class="main_title">-->
+            <!--<h2>活動剪輯</h2>-->
+            <!--<h3></h3>-->
+        <!--</div>-->
+        <!--<div class="row properties_inner event_slider owl-carousel">-->
+            <!--<div class="properties_item">-->
+                <!--<div class="pp_img ">-->
+                    <!--<img class="img-fluid" src="img/events/20180829/20180829_190048.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="pp_content">-->
+                    <!--<h4>馬力歐賽車錦標賽</h4>-->
+                    <!--<div class="pp_footer">-->
+                        <!--<h5>2018.08.29</h5>-->
+                        <!--<a class="main_btn genric-btn info" href="events.html">More</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
 
-            <div class="properties_item">
-                <div class="pp_img">
-                    <img class="img-fluid" src="img/events/20180822/20180822_192258.jpg" alt="">
-                </div>
-                <div class="pp_content">
-                    <h4>民俗月VR體驗活動</h4>
-                    <div class="pp_footer">
-                        <h5>2018.08.22</h5>
-                        <a class="main_btn genric-btn info" href="events.html">More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="properties_item">
-                <div class="pp_img">
-                    <img class="img-fluid" src="img/events/20180815/20180801_191329.jpg" alt="">
-                </div>
-                <div class="pp_content">
-                    <h4>煮過頭2</h4>
-                    <div class="pp_footer">
-                        <h5>2018.08.15</h5>
-                        <a class="main_btn genric-btn info" href="events.html">More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+            <!--<div class="properties_item">-->
+                <!--<div class="pp_img">-->
+                    <!--<img class="img-fluid" src="img/events/20180822/20180822_192258.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="pp_content">-->
+                    <!--<h4>民俗月VR體驗活動</h4>-->
+                    <!--<div class="pp_footer">-->
+                        <!--<h5>2018.08.22</h5>-->
+                        <!--<a class="main_btn genric-btn info" href="events.html">More</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="properties_item">-->
+                <!--<div class="pp_img">-->
+                    <!--<img class="img-fluid" src="img/events/20180815/20180801_191329.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="pp_content">-->
+                    <!--<h4>煮過頭2</h4>-->
+                    <!--<div class="pp_footer">-->
+                        <!--<h5>2018.08.15</h5>-->
+                        <!--<a class="main_btn genric-btn info" href="events.html">More</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</section>-->
 <!--================End Properties Area =================-->
 
 <!--================Testimonials Area =================-->
@@ -319,10 +319,10 @@
         }
         return imgs;
     }
-    $.get('http://localhost:8080/img/events/poster', (data) =>
+    var ip = location.host;
+    $.get('http://'+ip+'/img/events/poster', (data) =>
     {
         var imgs = parseDirectoryListing(data);
-        console.log(imgs);
         var div = document.getElementById("news");
         div.insertAdjacentHTML('beforeend',imgs);
     });
